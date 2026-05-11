@@ -149,7 +149,7 @@
     .ticker-track {
       display: flex;
       width: max-content;
-      animation: ticker-scroll 26s linear infinite;
+      animation: ticker-scroll 30s linear infinite;
       will-change: transform;
     }
 
@@ -162,8 +162,8 @@
     .ticker-item {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 0 18px;
+      justify-content: center;
+      padding: 0 16px;
       font-family: "Space Grotesk", sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
@@ -173,14 +173,16 @@
       line-height: 1;
     }
 
-    .ticker-dot {
+    .ticker-separator {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      line-height: 1;
-      transform: translateY(-1px);
-      opacity: 0.9;
+      width: 18px;
+      min-width: 18px;
       font-size: 0.78rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.92);
+      transform: translateY(-1px);
     }
 
     @keyframes ticker-scroll {
@@ -401,8 +403,13 @@
       }
 
       .ticker-item {
-        padding: 0 14px;
+        padding: 0 12px;
         font-size: 0.82rem;
+      }
+
+      .ticker-separator {
+        width: 16px;
+        min-width: 16px;
       }
 
       .hero {
@@ -451,35 +458,60 @@
     </div>
   </header>
 
-  <div class="ticker-bar" aria-label="Animated brand line">
+  <div class="ticker-bar" aria-label="Animated category line">
     <div class="ticker-track">
       <div class="ticker-group">
-        <span class="ticker-item">Self-Care <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Connect <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Outside <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Reset <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Chores <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Move <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Health <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Life Admin <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Career <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Learn <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Create <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Plan <span class="ticker-dot">✦</span></span>
+        <span class="ticker-item">Self-Care</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Connect</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Outside</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Reset</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Chores</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Move</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Health</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Life Admin</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Career</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Learn</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Create</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Plan</span>
+        <span class="ticker-separator">✦</span>
       </div>
+
       <div class="ticker-group" aria-hidden="true">
-        <span class="ticker-item">Self-Care <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Connect <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Outside <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Reset <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Chores <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Move <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Health <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Life Admin <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Career <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Learn <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Create <span class="ticker-dot">✦</span></span>
-        <span class="ticker-item">Plan <span class="ticker-dot">✦</span></span>
+        <span class="ticker-item">Self-Care</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Connect</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Outside</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Reset</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Chores</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Move</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Health</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Life Admin</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Career</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Learn</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Create</span>
+        <span class="ticker-separator">✦</span>
+        <span class="ticker-item">Plan</span>
+        <span class="ticker-separator">✦</span>
       </div>
     </div>
   </div>
