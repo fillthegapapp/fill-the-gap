@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fill the Gaps — Use the minutes you usually lose</title>
+  <meta
+    name="description"
+    content="Fill the Gaps helps you turn bored, wasted minutes into better options based on the time you have and the mood you're in."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #fcf8f3;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: #fffaf4;
+      --text: #1c1b1a;
+      --muted: #655d57;
+      --line: rgba(28, 27, 26, 0.1);
+      --accent: #f58b43;
+      --accent-deep: #d8671c;
+      --accent-soft: #ffe2cc;
+      --shadow: 0 20px 60px rgba(26, 21, 17, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 139, 67, 0.14), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 210, 171, 0.22), transparent 30%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(252, 248, 243, 0.74);
+      border-bottom: 1px solid rgba(28, 27, 26, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, var(--accent), var(--accent-deep));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(216, 103, 28, 0.25);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .brand-copy small {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .brand-copy span {
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid rgba(28, 27, 26, 0.08);
+      box-shadow: 0 8px 20px rgba(23, 20, 18, 0.04);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 76px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, .cta, .mock-time, .feature-kicker {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 10ch;
+      margin-bottom: 18px;
+    }
+
+    .hero-copy p {
+      max-width: 58ch;
+      margin: 0 0 26px;
+      font-size: 1.06rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 20px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .cta:hover { transform: translateY(-1px); }
+
+    .cta-primary {
+      background: linear-gradient(145deg, var(--accent), var(--accent-deep));
+      color: white;
+      box-shadow: 0 16px 30px rgba(216, 103, 28, 0.26);
+    }
+
+    .cta-secondary {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(28, 27, 26, 0.08);
+      color: var(--text);
+    }
+
+    .micro-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,250,244,0.92));
+      border: 1px solid rgba(28, 27, 26, 0.08);
+      border-radius: 32px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(245, 139, 67, 0.18), transparent 62%);
+      pointer-events: none;
+    }
+
+    .mock-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .mock-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mock-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(245, 139, 67, 0.12);
+      color: var(--accent-deep);
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .mock-time {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      margin-bottom: 8px;
+    }
+
+    .mock-sub {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .suggestion-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .suggestion {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(28, 27, 26, 0.06);
+    }
+
+    .suggestion-index {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-weight: 800;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .suggestion strong {
+      display: block;
+      font-size: 0.98rem;
+      margin-bottom: 2px;
+    }
+
+    .suggestion span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card,
+    .example-card,
+    .footer-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .feature-card {
+      padding: 22px;
+    }
+
+    .feature-kicker {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: var(--accent-deep);
+    }
+
+    .feature-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .example-card {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,250,244,0.9));
+    }
+
+    .example-card .mock-label {
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .example-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .example-card li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(28,27,26,0.06);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .final-cta {
+      padding-top: 26px;
+      padding-bottom: 58px;
+    }
+
+    .footer-card {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 18px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,245,236,0.92));
+    }
+
+    .footer-card h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .footer-card p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    .footer-actions {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 12px 0 42px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .feature-grid,
+      .examples-grid,
+      .footer-card {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        min-height: 72px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .hero-copy p,
+      .section-head p,
+      .footer-card p {
+        font-size: 0.98rem;
+      }
+
+      .hero-card,
+      .feature-card,
+      .example-card,
+      .footer-card {
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Fill the Gaps home">
+        <div class="brand-mark">FTG</div>
+        <div class="brand-copy">
+          <small>iOS app</small>
+          <span>Fill the Gaps</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#examples">Examples</a>
+        <a class="chip" href="#download">Get the App</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">For the 5–30 minute pockets you usually lose</div>
+          <h1>Use the minutes you usually waste.</h1>
+          <p>
+            Fill the Gaps helps you turn bored, scattered downtime into better options based on how much time you have,
+            how you feel, and what kind of reset you actually need.
+          </p>
+          <div class="cta-row" id="download">
+            <a class="cta cta-primary" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+            <a class="cta cta-secondary" href="#features">Explore Features</a>
+          </div>
+          <div class="micro-note">Built for quick action, not another app that feels like homework.</div>
+        </div>
+
+        <aside class="hero-card" aria-label="Preview of Fill the Gaps suggestions">
+          <div class="mock-top">
+            <div class="mock-label">Right now</div>
+            <div class="mock-badge">Restless mood</div>
+          </div>
+          <div class="mock-time">10 minutes</div>
+          <div class="mock-sub">Three better options instead of opening another scroll loop.</div>
+
+          <div class="suggestion-list">
+            <div class="suggestion">
+              <div class="suggestion-index">1</div>
+              <div>
+                <strong>Walk outside</strong>
+                <span>Get moving, clear your head, and break the feeling of being mentally stuck.</span>
+              </div>
+            </div>
+            <div class="suggestion">
+              <div class="suggestion-index">2</div>
+              <div>
+                <strong>Reset one small area</strong>
+                <span>Clear your desk, sink, or floor so your space stops adding friction to the rest of the day.</span>
+              </div>
+            </div>
+            <div class="suggestion">
+              <div class="suggestion-index">3</div>
+              <div>
+                <strong>Brain dump a page</strong>
+                <span>Write everything bouncing around in your head so you can stop carrying it all at once.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Small pockets of time add up fast.</h2>
+          <p>
+            Instead of defaulting to boredom, scrolling, or indecision, Fill the Gaps helps you make those minutes feel useful,
+            lighter, or more intentional.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-kicker">Step 1</div>
+            <h3>Pick your time</h3>
+            <p>
+              Choose the time you have right now, whether it is five minutes before leaving or twenty minutes on the couch.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-kicker">Step 2</div>
+            <h3>Match your mood</h3>
+            <p>
+              Tell the app how you feel so the suggestions fit the moment instead of throwing random tasks at you.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-kicker">Step 3</div>
+            <h3>Get 3 better options</h3>
+            <p>
+              See quick ideas you can actually do now, from productive resets to healthy breaks to simple life upkeep.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for real dead-time moments.</h2>
+          <p>
+            The goal is not to optimize every second. It is to help with the moments that usually disappear for no reason.
+          </p>
+        </div>
+
+        <div class="examples-grid">
+          <article class="example-card">
+            <span class="mock-label">5 minutes</span>
+            <ul>
+              <li>Refill your water and step outside for a quick reset.</li>
+              <li>Wipe down one surface that has been bothering you.</li>
+              <li>Do a fast stretch instead of sinking deeper into the couch.</li>
+            </ul>
+          </article>
+
+          <article class="example-card">
+            <span class="mock-label">10 minutes</span>
+            <ul>
+              <li>Make a snack that actually holds you over.</li>
+              <li>Update one resume bullet or finish one small task you have been avoiding.</li>
+              <li>Do a short walk without your phone taking over the whole break.</li>
+            </ul>
+          </article>
+
+          <article class="example-card">
+            <span class="mock-label">20 minutes</span>
+            <ul>
+              <li>Prep something for dinner so later feels easier.</li>
+              <li>Knock out a quick workout or movement circuit.</li>
+              <li>Handle one life-admin task before it turns into drag.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap footer-card">
+        <div>
+          <h2>Turn random downtime into something better.</h2>
+          <p>
+            Fill the Gaps is designed for the in-between moments when you know you are about to waste time, but would rather do
+            something that leaves you feeling a little better than before.
+          </p>
+        </div>
+
+        <div class="footer-actions">
+          <a class="cta cta-primary" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">Get Fill the Gaps</a>
+          <a class="cta cta-secondary" href="mailto:support@fillthegaps.app">Contact Support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 Fill the Gaps. All rights reserved.</div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
