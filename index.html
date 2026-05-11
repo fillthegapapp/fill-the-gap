@@ -8,17 +8,18 @@
     name="description"
     content="Fill the Gap helps you turn bored, wasted minutes into better options based on the time you have and the mood you're in."
   />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
       --bg: #fcf8f3;
-      --surface: rgba(255, 255, 255, 0.72);
-      --surface-strong: #fffaf4;
+      --surface: rgba(255, 255, 255, 0.78);
       --text: #1c1b1a;
       --muted: #655d57;
       --line: rgba(28, 27, 26, 0.1);
@@ -27,13 +28,16 @@
       --accent-soft: #ffe2cc;
       --shadow: 0 20px 60px rgba(26, 21, 17, 0.08);
       --radius-xl: 28px;
-      --radius-lg: 20px;
       --max: 1140px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -46,8 +50,15 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .wrap {
       width: min(calc(100% - 32px), var(--max));
@@ -59,7 +70,7 @@
       top: 0;
       z-index: 10;
       backdrop-filter: blur(14px);
-      background: rgba(252, 248, 243, 0.74);
+      background: rgba(252, 248, 243, 0.78);
       border-bottom: 1px solid rgba(28, 27, 26, 0.06);
     }
 
@@ -86,6 +97,7 @@
       object-fit: contain;
       display: block;
       border-radius: 12px;
+      flex-shrink: 0;
     }
 
     .brand-copy small {
@@ -124,13 +136,13 @@
     }
 
     .hero {
-      padding: 76px 0 54px;
+      padding: 88px 0 88px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 56px;
       align-items: center;
     }
 
@@ -148,7 +160,7 @@
       margin-bottom: 18px;
     }
 
-    h1, h2, h3, .cta, .mock-time, .feature-kicker {
+    h1, h2, h3, .cta, .feature-kicker {
       font-family: "Space Grotesk", sans-serif;
       letter-spacing: -0.04em;
       line-height: 1.04;
@@ -158,12 +170,12 @@
     h1 {
       font-size: clamp(3rem, 7vw, 5.8rem);
       max-width: 10ch;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero-copy p {
-      max-width: 58ch;
-      margin: 0 0 26px;
+      max-width: 56ch;
+      margin: 0 0 28px;
       font-size: 1.06rem;
       color: var(--muted);
     }
@@ -172,7 +184,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .cta {
@@ -187,7 +199,9 @@
       transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
-    .cta:hover { transform: translateY(-1px); }
+    .cta:hover {
+      transform: translateY(-1px);
+    }
 
     .cta-primary {
       background: linear-gradient(145deg, var(--accent), var(--accent-deep));
@@ -196,7 +210,7 @@
     }
 
     .cta-secondary {
-      background: rgba(255,255,255,0.82);
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid rgba(28, 27, 26, 0.08);
       color: var(--text);
     }
@@ -214,24 +228,25 @@
 
     .hero-image {
       width: 100%;
-      max-width: 420px;
-      border-radius: 28px;
+      max-width: 300px;
+      height: auto;
+      border-radius: 30px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(28, 27, 26, 0.08);
       background: rgba(255, 255, 255, 0.7);
     }
 
-    section {
-      padding: 34px 0;
+    .features {
+      padding: 72px 0 38px;
     }
 
     .section-head {
       max-width: 760px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .section-head h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
       margin-bottom: 12px;
     }
 
@@ -239,26 +254,23 @@
       margin: 0;
       color: var(--muted);
       font-size: 1.03rem;
+      max-width: 60ch;
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
-    .feature-card,
-    .example-card,
-    .footer-card {
+    .feature-card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
-    }
-
-    .feature-card {
-      padding: 22px;
+      padding: 24px;
+      min-height: 100%;
     }
 
     .feature-kicker {
@@ -277,73 +289,8 @@
       color: var(--muted);
     }
 
-    .examples-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .example-card {
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,250,244,0.9));
-    }
-
-    .example-card .mock-label {
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .example-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .example-card li {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(28,27,26,0.06);
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    .final-cta {
-      padding-top: 26px;
-      padding-bottom: 58px;
-    }
-
-    .footer-card {
-      padding: 30px;
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 18px;
-      align-items: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,245,236,0.92));
-    }
-
-    .footer-card h2 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      margin-bottom: 12px;
-    }
-
-    .footer-card p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 56ch;
-    }
-
-    .footer-actions {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
     footer {
-      padding: 12px 0 42px;
+      padding: 38px 0 42px;
     }
 
     .footer-inner {
@@ -354,6 +301,8 @@
       flex-wrap: wrap;
       color: var(--muted);
       font-size: 0.92rem;
+      border-top: 1px solid rgba(28, 27, 26, 0.08);
+      padding-top: 18px;
     }
 
     .footer-nav {
@@ -364,14 +313,20 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .feature-grid,
-      .examples-grid,
-      .footer-card {
+      .feature-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-actions {
-        justify-content: flex-start;
+      .hero {
+        padding: 64px 0 72px;
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .hero-image {
+        max-width: 280px;
       }
     }
 
@@ -385,7 +340,7 @@
       }
 
       .hero {
-        padding-top: 42px;
+        padding: 42px 0 60px;
       }
 
       h1 {
@@ -393,16 +348,21 @@
       }
 
       .hero-copy p,
-      .section-head p,
-      .footer-card p {
+      .section-head p {
         font-size: 0.98rem;
       }
 
-      .hero-card,
-      .feature-card,
-      .example-card,
-      .footer-card {
+      .hero-image {
+        max-width: 240px;
         border-radius: 24px;
+      }
+
+      .feature-card {
+        border-radius: 24px;
+      }
+
+      .features {
+        padding-top: 56px;
       }
     }
   </style>
@@ -420,8 +380,7 @@
 
       <nav class="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
-        <a href="#examples">Examples</a>
-        <a class="chip" href="#download">Get the App</a>
+        <a class="chip" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">Get the App</a>
       </nav>
     </div>
   </header>
@@ -436,10 +395,12 @@
             Fill the Gap helps you turn bored, scattered downtime into better options based on how much time you have,
             how you feel, and what kind of reset you actually need.
           </p>
+
           <div class="cta-row" id="download">
             <a class="cta cta-primary" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
             <a class="cta cta-secondary" href="#features">Explore Features</a>
           </div>
+
           <div class="micro-note">Built for quick action, not another app that feels like homework.</div>
         </div>
 
@@ -449,7 +410,7 @@
       </div>
     </section>
 
-    <section id="features">
+    <section class="features" id="features">
       <div class="wrap">
         <div class="section-head">
           <h2>Small pockets of time add up fast.</h2>
@@ -486,7 +447,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
