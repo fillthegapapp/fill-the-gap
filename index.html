@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fill the Gaps — Use the minutes you usually lose</title>
+  <title>Fill the Gap — Use the minutes you usually lose</title>
   <meta
     name="description"
-    content="Fill the Gaps helps you turn bored, wasted minutes into better options based on the time you have and the mood you're in."
+    content="Fill the Gap helps you turn bored, wasted minutes into better options based on the time you have and the mood you're in."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -206,100 +206,19 @@
       font-size: 0.92rem;
     }
 
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,250,244,0.92));
-      border: 1px solid rgba(28, 27, 26, 0.08);
-      border-radius: 32px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(245, 139, 67, 0.18), transparent 62%);
-      pointer-events: none;
-    }
-
-    .mock-top {
+    .hero-image-wrap {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
     }
 
-    .mock-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .mock-badge {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(245, 139, 67, 0.12);
-      color: var(--accent-deep);
-      font-weight: 700;
-      font-size: 0.82rem;
-    }
-
-    .mock-time {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      margin-bottom: 8px;
-    }
-
-    .mock-sub {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .suggestion-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .suggestion {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(28, 27, 26, 0.06);
-    }
-
-    .suggestion-index {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: var(--accent-soft);
-      color: var(--accent-deep);
-      font-weight: 800;
-      flex: 0 0 auto;
-      margin-top: 2px;
-    }
-
-    .suggestion strong {
-      display: block;
-      font-size: 0.98rem;
-      margin-bottom: 2px;
-    }
-
-    .suggestion span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
+    .hero-image {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(28, 27, 26, 0.08);
+      background: rgba(255, 255, 255, 0.7);
     }
 
     section {
@@ -491,11 +410,11 @@
 <body>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Fill the Gaps home">
-        <img class="brand-logo" src="assets/fill_the_gap_logo-modified copy.png" alt="Fill the Gaps logo" />
+      <a class="brand" href="#top" aria-label="Fill the Gap home">
+        <img class="brand-logo" src="fill_the_gap_logo-modified copy.png" alt="Fill the Gap logo" />
         <div class="brand-copy">
           <small>iOS app</small>
-          <span>Fill the Gaps</span>
+          <span>Fill the Gap</span>
         </div>
       </a>
 
@@ -514,7 +433,7 @@
           <div class="eyebrow">For the 5–30 minute pockets you usually lose</div>
           <h1>Use the minutes you usually waste.</h1>
           <p>
-            Fill the Gaps helps you turn bored, scattered downtime into better options based on how much time you have,
+            Fill the Gap helps you turn bored, scattered downtime into better options based on how much time you have,
             how you feel, and what kind of reset you actually need.
           </p>
           <div class="cta-row" id="download">
@@ -524,38 +443,9 @@
           <div class="micro-note">Built for quick action, not another app that feels like homework.</div>
         </div>
 
-        <aside class="hero-card" aria-label="Preview of Fill the Gaps suggestions">
-          <div class="mock-top">
-            <div class="mock-label">Right now</div>
-            <div class="mock-badge">Restless mood</div>
-          </div>
-          <div class="mock-time">10 minutes</div>
-          <div class="mock-sub">Three better options instead of opening another scroll loop.</div>
-
-          <div class="suggestion-list">
-            <div class="suggestion">
-              <div class="suggestion-index">1</div>
-              <div>
-                <strong>Walk outside</strong>
-                <span>Get moving, clear your head, and break the feeling of being mentally stuck.</span>
-              </div>
-            </div>
-            <div class="suggestion">
-              <div class="suggestion-index">2</div>
-              <div>
-                <strong>Reset one small area</strong>
-                <span>Clear your desk, sink, or floor so your space stops adding friction to the rest of the day.</span>
-              </div>
-            </div>
-            <div class="suggestion">
-              <div class="suggestion-index">3</div>
-              <div>
-                <strong>Brain dump a page</strong>
-                <span>Write everything bouncing around in your head so you can stop carrying it all at once.</span>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <div class="hero-image-wrap" aria-label="Fill the Gap app preview">
+          <img class="hero-image" src="assets/example_pic.png" alt="Fill the Gap app preview" />
+        </div>
       </div>
     </section>
 
@@ -564,7 +454,7 @@
         <div class="section-head">
           <h2>Small pockets of time add up fast.</h2>
           <p>
-            Instead of defaulting to boredom, scrolling, or indecision, Fill the Gaps helps you make those minutes feel useful,
+            Instead of defaulting to boredom, scrolling, or indecision, Fill the Gap helps you make those minutes feel useful,
             lighter, or more intentional.
           </p>
         </div>
@@ -601,7 +491,7 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <div>© 2026 Fill the Gaps. All rights reserved.</div>
+      <div>© 2026 Fill the Gap. All rights reserved.</div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
