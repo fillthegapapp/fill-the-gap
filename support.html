@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fbf7f2" />
+  <title>Fill the Gap — Support</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: #fffdfa;
+      --text: #171513;
+      --muted: #6b625b;
+      --line: rgba(23, 21, 19, 0.08);
+      --accent: #f58b43;
+      --accent-deep: #d8671c;
+      --accent-soft: #ffe6d2;
+      --shadow-soft: 0 18px 40px rgba(30, 23, 18, 0.06);
+      --radius-xl: 28px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 139, 67, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 214, 179, 0.18), transparent 28%),
+        var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 247, 242, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(23, 21, 19, 0.05);
+    }
+
+    nav {
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-group { display: flex; align-items: center; gap: 12px; }
+    .logo-img { width: 34px; height: auto; border-radius: 10px; }
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.4px;
+    }
+
+    .pill-link {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, background 0.15s ease;
+      box-shadow: 0 8px 22px rgba(23, 20, 18, 0.04);
+    }
+
+    .pill-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 56px 0 74px;
+      flex: 1;
+    }
+
+    .page-title {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.03;
+      font-size: clamp(34px, 4.2vw, 56px);
+    }
+
+    .page-sub {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: 16px;
+    }
+
+    .cards {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,252,247,0.82));
+      border-radius: 22px;
+      padding: 20px 20px 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .card ul {
+      margin: 0 0 12px;
+      padding-left: 18px;
+    }
+
+    .card li {
+      margin: 8px 0;
+    }
+
+    .cta-box {
+      margin-top: 18px;
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(245, 139, 67, 0.28);
+      background: rgba(245, 139, 67, 0.08);
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: rgba(23,21,19,0.82);
+    }
+
+    footer {
+      margin-top: auto;
+      background: rgba(251, 247, 242, 0.88);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 34px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-muted { color: var(--muted); font-size: 13px; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      margin-top: 14px;
+      color: rgba(23,21,19,0.64);
+      font-size: 12px;
+      max-width: 110ch;
+    }
+
+    @media (max-width: 900px) {
+      .container { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo-group">
+          <img src="assets/fill_the_gap_logo-modified copy.png" alt="Fill the Gap" class="logo-img">
+          <div class="logo-text">Fill the Gap</div>
+        </div>
+
+        <a class="pill-link" href="./">Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Support</h1>
+      <p class="page-sub">
+        If you need help with Fill the Gap, you may use the support contact and guidance below. This page is intended to provide the operational and legal support information typically expected for app distribution and review.
+      </p>
+
+      <div class="cards">
+        <section class="card">
+          <h2>Contact</h2>
+          <p>
+            Support email: <a href="mailto:fillthegap.app@gmail.com">fillthegap.app@gmail.com</a>
+          </p>
+
+          <div class="cta-box">
+            <p><strong>When contacting support:</strong> include your device model, operating system version, app version, and a concise description of the issue, along with screenshots if available.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Subscription and Purchase Support</h2>
+          <ul>
+            <li>Subscriptions and in-app purchases are billed and managed through Apple.</li>
+            <li>You may manage, cancel, or review your subscription through iOS Settings → Apple ID → Subscriptions.</li>
+            <li>If the app includes a restore purchases or restore access feature, use that option after reinstalling or signing back in.</li>
+            <li>Deleting an account within the app does not automatically cancel an active App Store subscription.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Account and Data Requests</h2>
+          <p>
+            If your issue concerns account access, sign-in, subscription restoration, or an available account deletion request, please contact support.
+          </p>
+          <ul>
+            <li>Some data may be stored locally on your device as part of normal app functionality.</li>
+            <li>Local app data may be removed if you uninstall the app, depending on your device settings and backups.</li>
+            <li>If your app includes account deletion, the precise effect of deletion depends on the systems connected to that feature and any necessary retention obligations.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Troubleshooting</h2>
+          <ul>
+            <li>Confirm you are using the latest available version of the app and your device operating system.</li>
+            <li>Force-close and reopen the app if a screen does not load or save properly.</li>
+            <li>Restart your device if the app becomes unresponsive.</li>
+            <li>Reinstall the app if the issue persists and you are comfortable doing so.</li>
+            <li>If a problem continues, contact support with details sufficient to reproduce the issue.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Policy Links</h2>
+          <ul>
+            <li><a href="./privacy.html">Privacy Policy</a></li>
+            <li><a href="./terms.html">Terms of Service</a></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>General Service Notice</h2>
+          <p>
+            Fill the Gap is provided for informational and self-management purposes. Support is provided on a reasonable-efforts basis. We do not guarantee uninterrupted availability, specific response times, or immediate resolution of all issues.
+          </p>
+          <p>
+            Support communications do not constitute medical, legal, financial, or other professional advice.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-muted">Fill the Gap</div>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./support.html">Support</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        This support page is intended to provide contact and service information for Fill the Gap.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
