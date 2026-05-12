@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fbf7f2" />
+  <title>Fill the Gap — Privacy Policy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: #fffdfa;
+      --text: #171513;
+      --muted: #6b625b;
+      --line: rgba(23, 21, 19, 0.08);
+      --accent: #f58b43;
+      --accent-deep: #d8671c;
+      --accent-soft: #ffe6d2;
+      --shadow-soft: 0 18px 40px rgba(30, 23, 18, 0.06);
+      --shadow-strong: 0 28px 60px rgba(30, 23, 18, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 139, 67, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 214, 179, 0.18), transparent 28%),
+        var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 247, 242, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(23, 21, 19, 0.05);
+    }
+
+    nav {
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      width: 34px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.4px;
+    }
+
+    .pill-link {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, background 0.15s ease;
+      box-shadow: 0 8px 22px rgba(23, 20, 18, 0.04);
+    }
+
+    .pill-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 56px 0 74px;
+      flex: 1;
+    }
+
+    .page-title {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.03;
+      font-size: clamp(34px, 4.2vw, 56px);
+    }
+
+    .page-sub {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: 16px;
+    }
+
+    .meta-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: rgba(23,21,19,0.9);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 20px rgba(23,20,18,0.03);
+    }
+
+    .cards {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,252,247,0.82));
+      border-radius: 22px;
+      padding: 20px 20px 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .card ul {
+      margin: 0 0 12px;
+      padding-left: 18px;
+    }
+
+    .card li {
+      margin: 8px 0;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 0.95em;
+      color: rgba(23,21,19,0.92);
+      background: rgba(23,21,19,0.04);
+      padding: 1px 5px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: auto;
+      background: rgba(251, 247, 242, 0.88);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 34px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      margin-top: 14px;
+      color: rgba(23,21,19,0.64);
+      font-size: 12px;
+      max-width: 110ch;
+    }
+
+    @media (max-width: 900px) {
+      .container { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo-group">
+          <img src="assets/fill_the_gap_logo-modified copy.png" alt="Fill the Gap" class="logo-img">
+          <div class="logo-text">Fill the Gap</div>
+        </div>
+
+        <a class="pill-link" href="./">Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-sub">
+        This Privacy Policy explains how Fill the Gap (“Fill the Gap,” “we,” “us,” or “our”) collects, uses, discloses, and otherwise processes information when you access or use the Fill the Gap mobile application, related website pages, and any related services that link to this Privacy Policy (collectively, the “Service”).
+      </p>
+
+      <div class="meta-row">
+        <span class="meta-pill">Effective Date: May 12, 2026</span>
+        <span class="meta-pill">Applies to the Fill the Gap app and related site pages</span>
+      </div>
+
+      <div class="cards">
+        <section class="card">
+          <h2>1) Scope and Acceptance</h2>
+          <p>
+            By downloading, accessing, or using the Service, you acknowledge that you have read and understood this Privacy Policy. This Privacy Policy applies only to information processed in connection with the Service and does not apply to third-party websites, applications, or services that may link to, from, or integrate with the Service, each of which is governed by its own terms and policies.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>2) Information We May Collect</h2>
+          <p>
+            Depending on how you use the Service and which features you enable, we may collect or process the following categories of information:
+          </p>
+          <ul>
+            <li>
+              <strong>Account and contact information.</strong> If you create an account, sign in, restore access, or contact support, we may process information such as your email address, account identifier, authentication-related information, and the contents of your support communications.
+            </li>
+            <li>
+              <strong>User-provided content and app inputs.</strong> We may process information you choose to provide through the Service, such as time selections, mood selections, saved preferences, custom entries, activity history, notes, favorites, or other information you voluntarily submit.
+            </li>
+            <li>
+              <strong>Device, diagnostics, and technical information.</strong> We may process information such as device type, operating system version, app version, language, approximate error state, crash information, diagnostics, and similar technical data when necessary to operate, secure, maintain, or troubleshoot the Service.
+            </li>
+            <li>
+              <strong>Identifiers.</strong> We may process internal account identifiers, app instance identifiers, device-associated identifiers, subscription identifiers, or similar identifiers reasonably necessary to authenticate users, maintain sessions, enforce entitlements, or protect the Service.
+            </li>
+            <li>
+              <strong>Purchase and subscription information.</strong> If you purchase a subscription through Apple, Apple processes the payment transaction. We may receive subscription status, entitlement status, transaction-related metadata, and restoration signals from Apple and from service providers that help us manage subscription access. We do not receive your full payment card number.
+            </li>
+            <li>
+              <strong>Support-related materials.</strong> If you contact us for support, we may process attachments or materials you choose to provide, such as screenshots, bug descriptions, device details, or other troubleshooting information.
+            </li>
+          </ul>
+          <p>
+            Certain information may be stored locally on your device rather than transmitted to our systems, depending on the architecture of the feature and your device settings.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>3) Information Stored Locally on Your Device</h2>
+          <p>
+            Some app content, settings, logs, and feature state may be stored locally on your device as part of normal operation. Local storage may include, without limitation, saved preferences, activity history, app state, or other user-entered or user-generated information. Locally stored data may be removed if you delete the app, clear local storage, reset your device, or restore from a backup that does not include such data.
+          </p>
+          <p>
+            Local storage behavior may vary depending on your device, operating system, backup settings, and whether you use account-based or cloud-enabled functionality.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>4) How We Use Information</h2>
+          <p>
+            We may use the information described above for the following purposes:
+          </p>
+          <ul>
+            <li>to provide, maintain, operate, personalize, and improve the Service;</li>
+            <li>to authenticate users and manage account access;</li>
+            <li>to process, validate, restore, and enforce subscriptions and premium feature entitlements;</li>
+            <li>to respond to support inquiries, investigate issues, and troubleshoot errors;</li>
+            <li>to monitor, protect, and improve the security, integrity, and stability of the Service;</li>
+            <li>to detect, prevent, or address fraud, abuse, unauthorized access, or violations of our terms;</li>
+            <li>to comply with legal obligations, lawful requests, and regulatory requirements;</li>
+            <li>to establish, exercise, or defend legal claims; and</li>
+            <li>for any other disclosed purpose consistent with applicable law and the context in which the information was provided.
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>5) Legal Bases for Processing</h2>
+          <p>
+            To the extent applicable under the laws of the European Economic Area, the United Kingdom, or similar jurisdictions, we process personal data on one or more of the following legal bases: (a) performance of a contract with you, including providing the Service you request; (b) our legitimate interests, such as maintaining security, improving the Service, preventing fraud, and responding to user inquiries; (c) compliance with legal obligations; and (d) your consent, where consent is required by law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>6) Disclosure of Information</h2>
+          <p>
+            We do not sell personal information in exchange for monetary consideration. We also do not share personal information for cross-context behavioral advertising unless expressly disclosed otherwise at the time of collection.
+          </p>
+          <p>
+            We may disclose information in the following circumstances:
+          </p>
+          <ul>
+            <li>
+              <strong>Service providers and processors.</strong> We may disclose information to vendors, contractors, cloud providers, authentication providers, hosting providers, customer support providers, analytics providers, crash/diagnostic providers, paywall providers, and subscription management providers that process information on our behalf and subject to appropriate contractual restrictions.
+            </li>
+            <li>
+              <strong>Platform providers and payment processors.</strong> Apple and related App Store infrastructure may process payment and subscription-related information in connection with in-app purchases, billing, verification, and restoration.
+            </li>
+            <li>
+              <strong>Professional advisors and corporate transactions.</strong> We may disclose information to auditors, legal counsel, insurers, financing sources, and transaction counterparties in connection with due diligence, financing, merger, acquisition, asset sale, reorganization, or similar business events.
+            </li>
+            <li>
+              <strong>Legal, compliance, and safety purposes.</strong> We may disclose information where we believe in good faith that disclosure is necessary to comply with law, regulation, legal process, governmental request, or enforceable legal demand, or to protect rights, property, safety, and security.
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>7) Third-Party Services and SDKs</h2>
+          <p>
+            The Service may integrate with third-party infrastructure, software development kits, or service providers to support functionality such as authentication, hosting, subscriptions, paywalls, diagnostics, or support. To the extent those integrations are used in the Service, their data practices may affect the categories of information processed in connection with the Service.
+          </p>
+          <p>
+            You are responsible for ensuring that the disclosures in this Privacy Policy accurately reflect the third-party tools actually present in your production build. If you use third-party SDKs or services, your App Store privacy disclosures and this Privacy Policy should be kept aligned with those practices.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>8) Analytics, Tracking, and Advertising</h2>
+          <p>
+            Unless otherwise disclosed in the Service or in an updated version of this Privacy Policy, we do not use the Service to track users across third-party apps or websites for targeted advertising. If we introduce analytics, advertising, attribution, or tracking technologies that materially change our data practices, we will update this Privacy Policy and, where required, provide any additional notices, disclosures, or consents required by applicable law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>9) Data Retention</h2>
+          <p>
+            We retain information for as long as reasonably necessary for the purposes described in this Privacy Policy, including to provide the Service, maintain business and financial records, enforce agreements, resolve disputes, support subscription restoration, comply with legal obligations, and protect the security and integrity of the Service.
+          </p>
+          <ul>
+            <li><strong>Account information</strong> may be retained for account continuity, fraud prevention, security, and legal compliance.</li>
+            <li><strong>Subscription-related records</strong> may be retained for billing support, entitlement restoration, auditing, fraud prevention, and compliance.</li>
+            <li><strong>Support communications</strong> may be retained as reasonably necessary to respond to inquiries, document resolutions, and improve support processes.</li>
+            <li><strong>Locally stored information</strong> may persist on your device unless deleted by you, removed by uninstalling the app, overwritten by new data, or removed by device settings or system behavior.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>10) Account Deletion and User Choices</h2>
+          <p>
+            Subject to technical limitations and applicable law, you may have the ability to delete your account, discontinue use of the Service, manage subscription status through Apple, or request assistance from support regarding account-related issues.
+          </p>
+          <ul>
+            <li><strong>Account deletion.</strong> If you use an in-app account deletion feature, the information removed will depend on the systems supporting the account and any legal or operational retention obligations that apply.</li>
+            <li><strong>Subscriptions.</strong> App Store subscriptions are managed through your Apple account and device settings. Deleting an account in the Service does not automatically cancel an active App Store subscription.</li>
+            <li><strong>Local data.</strong> Depending on the feature design, locally stored data may remain on your device unless separately removed or overwritten.</li>
+            <li><strong>Support requests.</strong> You may contact us to request help regarding available data-related options.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>11) Security</h2>
+          <p>
+            We implement administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, or disclosure. However, no method of transmission, storage, or electronic processing is completely secure, and we cannot guarantee absolute security.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>12) International Transfers</h2>
+          <p>
+            We may process or store information in the United States and in other countries where we or our service providers operate. Those jurisdictions may have data protection laws that differ from the laws of your jurisdiction. Where required by law, we take appropriate measures intended to provide adequate safeguards for cross-border transfers of personal data.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>13) Regional Privacy Rights</h2>
+          <p>
+            Depending on your jurisdiction, you may have rights relating to your personal data, including the right to request access to, correction of, deletion of, or portability of certain personal data, or to object to or restrict certain processing. In some jurisdictions, you may also have the right to opt out of processing for targeted advertising, sale, or certain profiling activities, if applicable.
+          </p>
+          <p>
+            We will consider and respond to eligible requests in accordance with applicable law. We may need to verify your identity before processing a request. You may contact us using the contact information below.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>14) Children’s Privacy</h2>
+          <p>
+            The Service is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13 through the Service. If you believe a child has provided personal information through the Service, contact us and we will take appropriate steps consistent with applicable law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>15) Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time to reflect changes in the Service, applicable law, or our data practices. When we do, we will update the Effective Date above. Your continued use of the Service after the updated Privacy Policy becomes effective constitutes your acknowledgment of the revised policy, to the extent permitted by law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>16) Contact</h2>
+          <p>
+            If you have questions about this Privacy Policy or our privacy practices, you may contact us at <a href="mailto:you@example.com">you@example.com</a>.
+          </p>
+          <p>
+            If you want to use a dedicated privacy contact address, replace the email above before publishing this page.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-muted">Fill the Gap</div>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./support.html">Support</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        This Privacy Policy is intended to describe the privacy practices for the Fill the Gap service. You are responsible for ensuring that the contents of this policy accurately reflect the data, SDKs, and service providers actually used in your live app and related website.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
