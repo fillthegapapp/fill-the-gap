@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fbf7f2" />
+  <title>Fill the Gap — Terms of Service</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: #fffdfa;
+      --text: #171513;
+      --muted: #6b625b;
+      --line: rgba(23, 21, 19, 0.08);
+      --accent: #f58b43;
+      --accent-deep: #d8671c;
+      --accent-soft: #ffe6d2;
+      --shadow-soft: 0 18px 40px rgba(30, 23, 18, 0.06);
+      --radius-xl: 28px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 139, 67, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 214, 179, 0.18), transparent 28%),
+        var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 247, 242, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(23, 21, 19, 0.05);
+    }
+
+    nav {
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-group { display: flex; align-items: center; gap: 12px; }
+    .logo-img { width: 34px; height: auto; border-radius: 10px; }
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.4px;
+    }
+
+    .pill-link {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, background 0.15s ease;
+      box-shadow: 0 8px 22px rgba(23, 20, 18, 0.04);
+    }
+
+    .pill-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 56px 0 74px;
+      flex: 1;
+    }
+
+    .page-title {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.03;
+      font-size: clamp(34px, 4.2vw, 56px);
+    }
+
+    .page-sub {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: 16px;
+    }
+
+    .meta-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: rgba(23,21,19,0.9);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 20px rgba(23,20,18,0.03);
+    }
+
+    .cards {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,252,247,0.82));
+      border-radius: 22px;
+      padding: 20px 20px 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .card ul {
+      margin: 0 0 12px;
+      padding-left: 18px;
+    }
+
+    .card li {
+      margin: 8px 0;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      font-size: 0.95em;
+      color: rgba(23,21,19,0.92);
+      background: rgba(23,21,19,0.04);
+      padding: 1px 5px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: auto;
+      background: rgba(251, 247, 242, 0.88);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(23, 21, 19, 0.08);
+      padding: 34px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-muted { color: var(--muted); font-size: 13px; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      margin-top: 14px;
+      color: rgba(23,21,19,0.64);
+      font-size: 12px;
+      max-width: 110ch;
+    }
+
+    @media (max-width: 900px) {
+      .container { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo-group">
+          <img src="assets/fill_the_gap_logo-modified copy.png" alt="Fill the Gap" class="logo-img">
+          <div class="logo-text">Fill the Gap</div>
+        </div>
+
+        <a class="pill-link" href="./">Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Terms of Service</h1>
+      <p class="page-sub">
+        These Terms of Service (“Terms”) govern your access to and use of the Fill the Gap mobile application, related website pages, and associated services (collectively, the “Service”). Please read them carefully.
+      </p>
+
+      <div class="meta-row">
+        <span class="meta-pill">Effective Date: May 12, 2026</span>
+        <span class="meta-pill">Applies to the Fill the Gap app and related site pages</span>
+      </div>
+
+      <div class="cards">
+        <section class="card">
+          <h2>1) Acceptance of Terms</h2>
+          <p>
+            By downloading, accessing, or using the Service, you agree to be bound by these Terms and by our <a href="./privacy.html">Privacy Policy</a>. If you do not agree to these Terms, do not access or use the Service.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>2) Eligibility and Legal Capacity</h2>
+          <p>
+            You represent and warrant that you have the legal capacity to enter into these Terms. If you are using the Service on behalf of an entity, you further represent and warrant that you have authority to bind that entity to these Terms.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>3) License to Use the Service</h2>
+          <p>
+            Subject to your compliance with these Terms, we grant you a limited, revocable, non-exclusive, non-transferable, non-sublicensable license to access and use the Service for your personal, non-commercial use.
+          </p>
+          <p>
+            The Service is licensed, not sold. Except for the limited license expressly granted in these Terms, we reserve all rights, title, and interest in and to the Service and all related intellectual property rights.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>4) Account Access and Security</h2>
+          <p>
+            Certain features may require an account, authentication method, or subscription entitlement. You are responsible for maintaining the confidentiality of your credentials and for all activities that occur under your account or using your device, except to the extent caused by our breach of these Terms or applicable law.
+          </p>
+          <p>
+            You agree to notify us promptly if you believe your account or credentials have been compromised or used without authorization.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>5) Subscriptions, Billing, and Auto-Renewal</h2>
+          <p>
+            The Service may offer paid subscriptions, premium features, or other in-app purchases through Apple’s App Store. All billing, payment processing, renewal, cancellation, and refund requests are handled in accordance with Apple’s applicable terms, policies, and platform rules.
+          </p>
+          <ul>
+            <li>Subscriptions may automatically renew unless canceled in accordance with Apple’s rules before the renewal date.</li>
+            <li>You may manage or cancel your subscription through your Apple account settings.</li>
+            <li>Deleting your account in the Service does not automatically cancel an active App Store subscription.</li>
+            <li>We may receive entitlement or subscription status information from Apple or our service providers for access control, restoration, fraud prevention, auditing, and support.</li>
+          </ul>
+          <p>
+            We do not control Apple’s billing systems and are not responsible for Apple’s payment processing, refund decisions, or subscription management interfaces.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>6) User Inputs, Content, and Local Data</h2>
+          <p>
+            The Service may allow you to enter, save, or generate certain information, including preferences, activities, timing selections, notes, history, or similar content (“User Content”). To the extent permitted by law and except as otherwise provided in our Privacy Policy, you retain ownership of your User Content.
+          </p>
+          <p>
+            You grant us a limited, non-exclusive, worldwide license to host, process, transmit, store, reproduce, and otherwise use User Content solely as reasonably necessary to operate, secure, support, improve, and provide the Service.
+          </p>
+          <p>
+            You are solely responsible for your User Content and represent that you have all rights necessary to provide it and that it does not violate law or the rights of any third party.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>7) Acceptable Use Restrictions</h2>
+          <p>You agree not to, and not to permit any third party to:</p>
+          <ul>
+            <li>use the Service in violation of any law, regulation, or third-party right;</li>
+            <li>copy, modify, distribute, sell, sublicense, rent, lease, or commercially exploit the Service except as expressly permitted by us in writing;</li>
+            <li>reverse engineer, decompile, disassemble, or otherwise attempt to derive source code, underlying ideas, or algorithms of the Service, except where such restriction is prohibited by law;</li>
+            <li>interfere with, disrupt, damage, or circumvent the security, authentication, subscription, or access-control features of the Service;</li>
+            <li>use automated means to access the Service in a manner that imposes an unreasonable burden or is intended to scrape, harvest, or extract data from the Service; or</li>
+            <li>introduce malware, malicious code, or other harmful technology into the Service.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>8) Informational Nature of the Service</h2>
+          <p>
+            The Service is intended for informational, organizational, and self-management purposes only. The Service does not provide medical, psychiatric, psychological, therapeutic, nutritional, legal, financial, employment, or other professional advice. Any recommendations, prompts, calculations, estimates, categorizations, or outputs generated by the Service are informational only and may not be accurate, complete, or suitable for your circumstances.
+          </p>
+          <p>
+            You remain solely responsible for your own decisions, actions, and outcomes. You should not rely on the Service as a substitute for professional advice.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>9) No Warranties</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED “AS IS,” “AS AVAILABLE,” AND WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. WE DISCLAIM ALL WARRANTIES, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, QUIET ENJOYMENT, ACCURACY, OR THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF HARMFUL COMPONENTS.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>10) Limitation of Liability</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, FILL THE GAP AND ITS AFFILIATES, LICENSORS, SERVICE PROVIDERS, CONTRACTORS, AND REPRESENTATIVES WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, GOODWILL, DATA, BUSINESS INTERRUPTION, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THE SERVICE OR THESE TERMS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+          </p>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, OUR TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THE SERVICE OR THESE TERMS WILL NOT EXCEED THE GREATER OF: (A) THE AMOUNT YOU PAID TO US OR THROUGH THE APP STORE FOR THE SERVICE IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM; OR (B) FIFTY U.S. DOLLARS (US $50.00).
+          </p>
+          <p>
+            Some jurisdictions do not allow certain exclusions or limitations of liability, so some portions of this Section may not apply to you to the extent prohibited by law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>11) Indemnification</h2>
+          <p>
+            To the maximum extent permitted by law, you agree to defend, indemnify, and hold harmless Fill the Gap and its affiliates, licensors, service providers, contractors, and representatives from and against any claims, demands, liabilities, damages, judgments, awards, losses, costs, and expenses, including reasonable attorneys’ fees, arising out of or relating to: (a) your use of the Service; (b) your User Content; (c) your breach of these Terms; or (d) your violation of law or the rights of any third party.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>12) Suspension and Termination</h2>
+          <p>
+            We may suspend, restrict, disable, or terminate your access to all or part of the Service at any time, with or without notice, if we reasonably believe you have violated these Terms, created risk or possible legal exposure for us or others, or if suspension or termination is otherwise necessary to protect the Service, our users, or third parties.
+          </p>
+          <p>
+            Sections of these Terms that by their nature should survive termination will survive, including provisions relating to intellectual property, disclaimers, limitations of liability, indemnification, governing law, and dispute-related matters.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>13) Availability, Changes, and Updates</h2>
+          <p>
+            We may modify, suspend, discontinue, or update the Service, any feature, any content, or any subscription offering at any time, with or without notice, subject to applicable law. We are not liable for any modification, suspension, discontinuation, or unavailability of the Service.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>14) Third-Party Platforms and Apple Terms</h2>
+          <p>
+            Your use of the Service may also be subject to third-party platform terms, including Apple’s App Store terms and device usage terms. You are responsible for complying with all applicable third-party terms.
+          </p>
+          <p>
+            These Terms are solely between you and Fill the Gap, not Apple. Apple is not responsible for the Service, its content, maintenance, support, or warranty claims, except as otherwise required by applicable law or Apple’s mandatory platform terms. To the extent required by Apple’s standard license terms, Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce these Terms against you.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>15) Governing Law</h2>
+          <p>
+            These Terms and any dispute arising out of or relating to the Service or these Terms will be governed by and construed in accordance with the laws of the State of California, without regard to conflict of law principles, except to the extent superseded by applicable consumer protection law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>16) Changes to These Terms</h2>
+          <p>
+            We may revise these Terms from time to time. When we do, we will update the Effective Date above. Your continued use of the Service after revised Terms become effective constitutes your acceptance of the revised Terms, to the extent permitted by law.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>17) Contact</h2>
+          <p>
+            If you have questions about these Terms, you may contact us at <a href="mailto:you@example.com">you@example.com</a>.
+          </p>
+          <p>
+            Replace the placeholder email above before publishing this page.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-muted">Fill the Gap</div>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy</a>
+          <a href="./terms.html">Terms</a>
+          <a href="./support.html">Support</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        These Terms govern your use of the Fill the Gap service. You are responsible for ensuring that the operational and contact details published on this page remain accurate and current.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
