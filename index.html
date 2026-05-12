@@ -220,7 +220,6 @@
       margin-bottom: 20px;
     }
 
-    h1,
     h2,
     h3,
     .cta,
@@ -231,10 +230,13 @@
       margin: 0;
     }
 
-    h1 {
-      font-size: clamp(3.2rem, 7vw, 6.2rem);
-      max-width: 9.5ch;
-      margin-bottom: 22px;
+    .hero-title {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 10ch;
+      margin: 0 0 20px;
     }
 
     .hero-copy p {
@@ -306,11 +308,10 @@
     .device-frame {
       position: relative;
       z-index: 1;
-      padding: 14px;
+      padding: 12px;
       border-radius: 42px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 241, 0.96));
-      border: 1px solid rgba(23, 21, 19, 0.08);
+      background: #111111;
+      border: 1px solid rgba(0, 0, 0, 0.95);
       box-shadow: var(--shadow-strong);
     }
 
@@ -320,7 +321,7 @@
       height: auto;
       border-radius: 30px;
       box-shadow: 0 10px 30px rgba(20, 16, 14, 0.08);
-      border: 1px solid rgba(23, 21, 19, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       background: rgba(255, 255, 255, 0.92);
     }
 
@@ -435,7 +436,7 @@
       }
 
       .device-frame {
-        padding: 12px;
+        padding: 10px;
       }
 
       .hero-image {
@@ -471,7 +472,7 @@
         padding: 48px 0 62px;
       }
 
-      h1 {
+      .hero-title {
         max-width: none;
       }
 
@@ -580,7 +581,7 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">For the 5–30 minute pockets you usually lose</div>
-          <h1>Use the minutes you usually waste.</h1>
+          <h1 class="hero-title">Use the minutes you usually waste.</h1>
           <p>
             Fill the Gap gives you better ways to use the small pockets of time that usually disappear to boredom or scrolling.
           </p>
